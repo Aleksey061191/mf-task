@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { Provider } from 'react-redux'
 
-import Layout from './components/layout'
+import Layout from './containers/layout'
 import { store } from './store/store'
 
 const App = memo(() => (

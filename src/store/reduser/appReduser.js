@@ -1,10 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { getWeather } from './helpers/appHelpers'
+import { getCurrentWeather, getWeather } from './helpers/appHelpers'
+
+import weatherApi from '../../services/weatherApi'
 
 const initialState = {
   weather: [],
 }
+
+// if (navigator.geolocation) {
+//   navigator.geolocation.getCurrentPosition(async (position) => {
+//     const weather = await weatherApi.getCurrentPosWeather(position.coords.latitude, position.coords.longitude)
+//     console.log(weather.data.name)
+//     // initialState.weather.put(weather)
+//   })
+// }
 // const nav = navigator.geolocation.getCurrentPosition((pos) => {
 //   const lat = pos.coords.latitude
 //   const lon = pos.coords.longitude
@@ -12,7 +22,7 @@ const initialState = {
 // })
 
 const appSlice = createSlice({
-  name: 'city',
+  name: 'weather',
   initialState,
   reducers: {
     addCity(state, action) {
@@ -23,6 +33,9 @@ const appSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    builder.addCase(getCurrentWeather.fulfilled, (state, { payload }) => {
+      state.weather.push(payload)
+    })
     builder.addCase(getWeather.fulfilled, (state, { payload }) => {
       state.weather.push(payload)
     })

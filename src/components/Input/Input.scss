@@ -1,0 +1,38 @@
+.search {
+  display: flex;
+}
+
+.input-form {
+  height: 40px;
+  width: 350px;
+  display: flex;
+  flex-direction: row;
+}
+
+.input {
+  background-color: rgb(207, 205, 205);
+  border-color: rgb(207, 205, 205);
+  flex-grow: 1;
+  font-size: 22px;
+  border-radius: 10px 0 0 10px;
+  text-align: center;
+}
+
+*:focus {
+  outline: none;
+}
+
+.search-button {
+  width: 70px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  background: rgb(62, 62, 218);
+  color: white;
+  border-radius: 0 10px 10px 0;
+  transition: 0.3s;
+  &:hover {
+    background: rgb(131, 131, 243);
+  }
+}
