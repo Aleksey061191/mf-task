@@ -29,7 +29,7 @@ const appSlice = createSlice({
       state.weather.push(action.payload)
     },
     removeCity(state, action) {
-      state.notes = state.weather.filter((item) => item.city !== action.payload)
+      state.weather = state.weather.filter((item) => item.name !== action.payload)
     },
   },
   extraReducers: (builder) => {

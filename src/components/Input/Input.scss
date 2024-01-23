@@ -1,17 +1,17 @@
 .search {
-  display: flex;
+  grid-area: sh;
 }
 
 .input-form {
-  height: 40px;
+  height: 50px;
   width: 350px;
   display: flex;
   flex-direction: row;
 }
 
 .input {
-  background-color: rgb(207, 205, 205);
-  border-color: rgb(207, 205, 205);
+  background-color: rgba(112, 206, 128, 0.664);
+  border: none;
   flex-grow: 1;
   font-size: 22px;
   border-radius: 10px 0 0 10px;
@@ -23,16 +23,18 @@
 }
 
 .search-button {
-  width: 70px;
-  height: 40px;
+  width: 80px;
+  height: 50px;
   font-size: 18px;
-  font-weight: 300;
+  letter-spacing: 1px;
+  font-weight: 400;
   cursor: pointer;
-  background: rgb(62, 62, 218);
+  background: rgb(17, 93, 138);
+  border: none;
   color: white;
   border-radius: 0 10px 10px 0;
   transition: 0.3s;
   &:hover {
-    background: rgb(131, 131, 243);
+    background: rgb(48, 48, 116);
   }
 }

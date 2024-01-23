@@ -1,0 +1,8 @@
+.cities-list {
+  grid-area: lt;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 20px;
+  margin-top: 40px;
+}
