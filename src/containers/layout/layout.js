@@ -2,6 +2,7 @@ import { memo, useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import './layout.scss'
+import CurrentCity from '../../components/CurrentCity/CurrentCity'
 import { getWeather, getWeatherByCoord } from '../../store/reduser/helpers/appHelpers'
 import getCurrentPosition from '../../utils/getCurrentPosition'
 import CitiesContainer from '../CitiesContainer/CitiesContainer'
@@ -31,11 +32,11 @@ const Layout = memo(() => {
   }, [dispatch, state.cities])
 
   useEffect(() => {
-    if (state.currentPosition === null) {
+    if (state.currentCity === null) {
       getCurrentPosition(successGeoLocCallback, errorGeoLocCallback)
       getWeatherFromLocal()
     }
-  }, [successGeoLocCallback, errorGeoLocCallback, state.currentPosition, getWeatherFromLocal])
+  }, [successGeoLocCallback, errorGeoLocCallback, state.currentCity, getWeatherFromLocal])
 
   useEffect(() => {
     localStorage.setItem('weather', JSON.stringify(state.cities))
@@ -45,6 +46,7 @@ const Layout = memo(() => {
     <div className='app'>
       <InputContainer />
       <CitiesContainer />
+      <CurrentCity />
     </div>
   )
 })

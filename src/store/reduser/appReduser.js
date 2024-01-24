@@ -5,7 +5,7 @@ import { getWeather, getWeatherByCoord } from './helpers/appHelpers'
 const initialState = {
   cities: localStorage.getItem('weather') ? JSON.parse(localStorage.getItem('weather')) : [],
   weather: [],
-  currentPosition: null,
+  currentCity: null,
 }
 
 const appSlice = createSlice({
@@ -22,7 +22,7 @@ const appSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getWeatherByCoord.fulfilled, (state, { payload }) => {
-      state.currentPosition = payload
+      state.currentCity = payload
     })
     builder.addCase(getWeather.fulfilled, (state, { payload }) => {
       state.weather.push(payload)

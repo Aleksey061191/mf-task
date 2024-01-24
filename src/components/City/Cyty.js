@@ -8,7 +8,7 @@ const City = ({ city, handleRemove }) => {
       <span className='item-remove' onClick={() => handleRemove(city.name)}>
         x
       </span>
-      <i className={`item-icon owf owf-${city.weather[0].id}`}></i>
+      <div className={`item-icon owf owf-${city.weather[0].id}`}></div>
       <div className='item-description'>
         <span className='item-temperature'>{Math.trunc(city.main.temp)}°C</span>
         <span className='item-weather-description'>{city.weather[0].description}</span>

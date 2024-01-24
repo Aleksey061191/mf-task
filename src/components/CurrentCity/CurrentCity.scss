@@ -1,0 +1,42 @@
+.current-city {
+  grid-area: ct;
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.current-city__city-name {
+  font-size: 43px;
+}
+
+.current-city__description {
+  font-size: 26px;
+}
+.current-city__temp {
+  display: flex;
+}
+.current-city__temp div {
+  display: flex;
+  align-items: center;
+}
+.current-city__weather-icon {
+  font-size: 100px;
+}
+.current-city__tempr {
+  font-size: 80px;
+  color: #c0e7e2;
+  margin-left: 20px;
+}
+
+.current-city__wind {
+  font-size: 26px;
+}
+
+.current-city__humidity {
+  font-size: 26px;
+}
