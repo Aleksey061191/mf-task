@@ -1,6 +1,7 @@
 {
   "name": "mf-task",
   "version": "0.1.0",
+  "homepage": "https://aleksey061191.github.io/mf-task",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
