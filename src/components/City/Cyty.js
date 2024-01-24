@@ -9,12 +9,12 @@ const City = ({ city, handleRemove }) => {
         x
       </span>
       <i className={`item-icon owf owf-${city.weather[0].id}`}></i>
-      <div class='item-description'>
-        <span class='item-temperature'>{Math.trunc(city.main.temp)}°C</span>
-        <span class='item-weather-description'>{city.weather[0].description}</span>
+      <div className='item-description'>
+        <span className='item-temperature'>{Math.trunc(city.main.temp)}°C</span>
+        <span className='item-weather-description'>{city.weather[0].description}</span>
       </div>
-      <div class='item-wind'>Wind speed: {Math.trunc(city.wind.speed)}m/s</div>
-      <div class='item-humidity'>Humidity: {Math.trunc(city.main.humidity)}%</div>
+      <div className='item-wind'>Wind speed: {Math.trunc(city.wind.speed)}m/s</div>
+      <div className='item-humidity'>Humidity: {Math.trunc(city.main.humidity)}%</div>
     </div>
   )
 }

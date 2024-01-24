@@ -9,11 +9,13 @@
   border-radius: 20px;
   padding: 20px;
   font-size: 22px;
-  color: rgb(20, 20, 20);
+  color: rgb(233, 233, 233);
   font-weight: 500;
-  &.item-icon {
-    font-size: 44px;
-  }
+  min-width: 250px;
+}
+
+.item-icon .owf {
+  font-size: 44px;
 }
 
 .item-remove {

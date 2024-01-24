@@ -11,6 +11,7 @@ const CitiesContainer = () => {
   const handleRemove = (name) => {
     dispatch(removeCity(name))
   }
+
   return (
     <div className='cities-list'>
       {cities.map((el, i) => (

@@ -1,40 +1,28 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { getCurrentWeather, getWeather } from './helpers/appHelpers'
-
-import weatherApi from '../../services/weatherApi'
+import { getWeather, getWeatherByCoord } from './helpers/appHelpers'
 
 const initialState = {
+  cities: localStorage.getItem('weather') ? JSON.parse(localStorage.getItem('weather')) : [],
   weather: [],
+  currentPosition: null,
 }
-
-// if (navigator.geolocation) {
-//   navigator.geolocation.getCurrentPosition(async (position) => {
-//     const weather = await weatherApi.getCurrentPosWeather(position.coords.latitude, position.coords.longitude)
-//     console.log(weather.data.name)
-//     // initialState.weather.put(weather)
-//   })
-// }
-// const nav = navigator.geolocation.getCurrentPosition((pos) => {
-//   const lat = pos.coords.latitude
-//   const lon = pos.coords.longitude
-//   //   console.log(lat, lon)
-// })
 
 const appSlice = createSlice({
   name: 'weather',
   initialState,
   reducers: {
-    addCity(state, action) {
-      state.weather.push(action.payload)
+    addCity(state, { payload }) {
+      state.cities.push(payload)
     },
-    removeCity(state, action) {
-      state.weather = state.weather.filter((item) => item.name !== action.payload)
+    removeCity(state, { payload }) {
+      state.weather = state.weather.filter((item) => item.name !== payload)
+      state.cities = state.cities.filter((item) => item !== payload.toLowerCase())
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(getCurrentWeather.fulfilled, (state, { payload }) => {
-      state.weather.push(payload)
+    builder.addCase(getWeatherByCoord.fulfilled, (state, { payload }) => {
+      state.currentPosition = payload
     })
     builder.addCase(getWeather.fulfilled, (state, { payload }) => {
       state.weather.push(payload)
